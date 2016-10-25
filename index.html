@@ -1,6 +1,4 @@
-<!DOCTYPE html>
 <html lang="en">
-
 <head>
 
     <meta charset="utf-8">
@@ -11,10 +9,10 @@
     <title>Aman Soni</title>
 
     <!-- CDNs -->
-	<script src="//ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
 	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
-	<script type="text/javascript" src="//twitter.github.io/bootstrap/assets/js/bootstrap-transition.js"></script>
-	<script type="text/javascript" src="//twitter.github.io/bootstrap/assets/js/bootstrap-collapse.js"></script>
+	<script type="text/javascript" src="https://twitter.github.io/bootstrap/assets/js/bootstrap-transition.js"></script>
+	<script type="text/javascript" src="https://twitter.github.io/bootstrap/assets/js/bootstrap-collapse.js"></script>
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
     <link href="css/amansoni.css" rel="stylesheet" />
@@ -52,6 +50,9 @@
                     </li>
                     <li>
                         <a href="#publications">Publications</a>
+                    </li>
+                    <li>
+                        <a href="#recent">Recent</a>
                     </li>
                     <li>
                         <a href="#qrcode">QR Code</a>
@@ -132,6 +133,14 @@
 			</div>
 		</div>
 
+		<hr class="featurette-divider" id="recent">
+		<div class="featurette">
+			<h1>Publications</h1>
+			<div class="tweetCloud">
+			<div id="tweetArrow"></div>
+			<div id="tweetText">tweets</div>
+		</div>
+
 		<hr class="featurette-divider" id="qrcode">
 		<div class="featurette">
 			<h2>QR Code</h2>
@@ -155,6 +164,21 @@ $(document).on('click','.navbar-collapse.in',function(e) {
     if( $(e.target).is('a') ) {
         $(this).collapse('hide');
     }
+});
+
+$(document).ready(function () {
+
+    var k = "https://api.twitter.com/1.1/statuses/user_timeline.json?screen_name=amansoni&count=5";
+	
+    $.ajax({
+        dataType: 'jsonp',
+        url: k,
+        success: function (data) {
+            $.each(data, function (i, item) {
+                $("#tweetFeed").append("<div class='tweetCloud'><div id='tweetArrow'></div><div id='tweetText'>" + item.text + "</div></div>");
+            })
+        }
+    });
 });
 </script>
 </body>
