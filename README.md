@@ -14,7 +14,7 @@ Welcome to my GitHub profile! Here's a bit about me:
 
 ### Top Languages
 
-![Top Languages]([https://github-readme-stats.vercel.app/api/top-langs/?username=amansoni&layout=compact&theme=radical](https://github-readme-stats.vercel.app/api/top-langs/?username=amansoni&layout=compact&theme=radical))
+![Top Languages](https://github-readme-stats.vercel.app/api/top-langs/?username=amansoni&layout=compact&theme=radical&hide=html,css)
 
 ### Projects
 
