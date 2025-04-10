@@ -1,13 +1,5 @@
 ### Hi there, I'm Aman Soni 👋
 
-Welcome to my GitHub profile! Here's a bit about me:
-
-- 🌱 I’m currently learning [specific technology or topic].
-- 🔭 I’m currently working on [current project or job].
-- 👯 I’m looking to collaborate on [projects or technologies you are interested in].
-- 💬 Ask me about [topics or technologies you are knowledgeable about].
-- 📫 How to reach me: [your email or social media links].  
-
 ### My GitHub Stats
 
 ![Aman's GitHub Stats](https://github-readme-stats.vercel.app/api?username=amansoni&show_icons=true&theme=radical)
